@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
+
+$colorWhite:#FFFFFF;
+$colorBlack:#191C21;
+$colorPrimary:#195962;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: $colorBlack;
+
+    &-logo {
+        &--text {
+            padding: 1rem 2rem;
+            font-size: 4rem;
+            color: $colorWhite;
+        }
+    }
+}
+
+.footer {
+    padding: 1rem 0;
+    width: 100%;
+    background: $colorBlack;
+
+    &-options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $colorWhite;
+
+        & * {
+            font-size: 1.5rem;
+            margin: 0 .5rem;
+        }
+
+        & a {
+            font-weight: 300;
+            font-size: 2.2rem;
+        }
+    }
+}
+
+.main {
+    flex-grow: 1;
+    width: 100%;
+    background-color: $colorBlack;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-hangman,
+    &-game {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    &-hangman {
+
+        &--svg {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        & svg {
+            width: 80%;
+            height: 80%;
+
+            & * {
+                fill: $colorWhite;
+                visibility: hidden;
+            }
+
+            & #background_rect {
+                fill: $colorBlack;
+            }
+
+            & #eyes circle {
+                fill: $colorBlack;
+            }
+
+            & #backgrounnd_rect,
+            #floor_full,
+            #bar_left,
+            #bar_top {
+                visibility: visible;
+            }
+
+        }
+    }
+
+    &-game {
+        padding: 1rem 4rem;
+
+        &--word {
+            margin-top: 20vh;
+            margin-bottom: 5vh;
+            width: 100%;
+            height: 5rem;
+            background: $colorWhite;
+        }
+
+        &--meaning {
+            width: 100%;
+            height: 3rem;
+            background: $colorPrimary;
+            margin-bottom: 5vh;
+        }
+
+        &--enter {
+            margin-bottom: 7vh;
+
+            form {
+                display: flex;
+                align-items: center;
+
+                & * {
+                    padding: 1rem;
+                    border-radius: .5rem;
+
+                    &,
+                    &:active,
+                    &:focus,
+                    &:hover {
+                        border: 0;
+                    }
+                }
+
+                & input {
+                    font-size: 3rem;
+                    text-align: center;
+                    margin-right: 3rem;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+
+                & button {
+                    font-size: 2rem;
+                    border-radius: .5rem;
+                    background-color: $colorPrimary;
+                    color: $colorWhite;
+
+                    &:hover {
+                        opacity: .7;
+                    }
+                }
+            }
+        }
+
+        &--tries {
+            width: 100%;
+            height: 3rem;
+            background: $colorPrimary;
+            margin-bottom: 5vh;
+        }
+
+        &--start {
+            font-size: 3rem;
+            border-radius: .5rem;
+            background-color: $colorWhite;
+            color: $colorPrimary;
+            padding: 1rem;
+            border-radius: .5rem;
+            text-transform: capitalize;
+
+            &,
+            &:active,
+            &:focus,
+            &:hover {
+                border: 0;
+            }
+
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+
+}

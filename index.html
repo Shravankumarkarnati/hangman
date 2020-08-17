@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman | REST API</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg" />
+    <meta name="author" content="Shravan Kumar Karnati" />
+    <meta
+      name="Description"
+      content="A Full Stack Hangman Game With REST API"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-logo">
+          <h1 class="header-logo--text">Hangman</h1>
+        </div>
+      </header>
+      <main class="main">
+        <div class="main-hangman">
+          <div class="main-hangman--svg">
+            <svg
+              width="700"
+              height="700"
+              viewBox="0 0 700 700"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Hangman1">
+                <rect
+                  width="700"
+                  height="700"
+                  fill="white"
+                  id="background_rect"
+                />
+                <rect
+                  id="floor_full"
+                  x="117"
+                  y="508"
+                  width="466"
+                  height="10"
+                  fill="#C4C4C4"
+                />
+                <rect
+                  id="bar_left"
+                  x="140"
+                  y="108"
+                  width="13"
+                  height="406"
+                  fill="#C4C4C4"
+                />
+                <rect
+                  id="bar_top"
+                  x="153"
+                  y="108"
+                  width="203"
+                  height="12"
+                  fill="#C4C4C4"
+                />
+                <rect
+                  id="rope"
+                  x="345"
+                  y="120"
+                  width="11"
+                  height="81"
+                  fill="#C4C4C4"
+                />
+                <g id="man">
+                  <g id="head">
+                    <circle
+                      id="head_2"
+                      cx="350"
+                      cy="236"
+                      r="35"
+                      fill="#C4C4C4"
+                    />
+                    <g id="eyes">
+                      <circle
+                        id="Ellipse 2"
+                        cx="366"
+                        cy="230"
+                        r="10"
+                        fill="white"
+                      />
+                      <circle
+                        id="Ellipse 3"
+                        cx="335"
+                        cy="230"
+                        r="10"
+                        fill="white"
+                      />
+                    </g>
+                  </g>
+                  <rect
+                    id="spine"
+                    x="345"
+                    y="271"
+                    width="11"
+                    height="115"
+                    fill="#C4C4C4"
+                  />
+                  <g id="hands">
+                    <rect
+                      id="Rectangle 6"
+                      x="345.477"
+                      y="281"
+                      width="7.00003"
+                      height="77.0419"
+                      transform="rotate(45 345.477 281)"
+                      fill="#C4C4C4"
+                    />
+                    <rect
+                      id="Rectangle 7"
+                      x="346"
+                      y="280.95"
+                      width="7.00003"
+                      height="77.0419"
+                      transform="rotate(-45 346 280.95)"
+                      fill="#C4C4C4"
+                    />
+                  </g>
+                  <g id="legs">
+                    <rect
+                      id="Rectangle 8"
+                      x="345.477"
+                      y="381"
+                      width="7.00003"
+                      height="77.0419"
+                      transform="rotate(45 345.477 381)"
+                      fill="#C4C4C4"
+                    />
+                    <rect
+                      id="Rectangle 9"
+                      x="350"
+                      y="385.95"
+                      width="7.00003"
+                      height="77.0419"
+                      transform="rotate(-45 350 385.95)"
+                      fill="#C4C4C4"
+                    />
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="main-game">
+          <div class="main-game--word"></div>
+          <div class="main-game--meaning"></div>
+          <div class="main-game--enter">
+            <form>
+              <input type="text" name="letter" size="1" maxlength="1" />
+              <button type="submit">Guess</button>
+            </form>
+          </div>
+          <div class="main-game--tries"></div>
+          <button class="main-game--start">Start New game</button>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-options">
+          <a href="#">API </a>
+          <p>by Shravan &copy; 2020</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="./app.js"></script>
+</html>

@@ -4,7 +4,9 @@
   "description": "A full stack hangman game- restAPI(backend)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scss:watch": "node-sass ./styles.scss ./styles.css -w",
+    "live": "live-server",
+    "start": "npm-run-all --parallel live scss:watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/Shravankumarkarnati/hangman/issues"
   },
-  "homepage": "https://github.com/Shravankumarkarnati/hangman#readme"
+  "homepage": "https://github.com/Shravankumarkarnati/hangman#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "velocity-animate": "^1.5.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
 }

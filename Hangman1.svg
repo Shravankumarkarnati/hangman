@@ -1,0 +1,27 @@
+<svg width="700" height="700" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Hangman1">
+<rect width="700" height="700" fill="white"/>
+<rect id="floor_full" x="117" y="508" width="466" height="10" fill="#C4C4C4"/>
+<rect id="bar_left" x="140" y="108" width="13" height="406" fill="#C4C4C4"/>
+<rect id="bar_top" x="153" y="108" width="203" height="12" fill="#C4C4C4"/>
+<rect id="rope" x="345" y="120" width="11" height="81" fill="#C4C4C4"/>
+<g id="man">
+<g id="head">
+<circle id="head_2" cx="350" cy="236" r="35" fill="#C4C4C4"/>
+<g id="eyes">
+<circle id="Ellipse 2" cx="366" cy="230" r="10" fill="white"/>
+<circle id="Ellipse 3" cx="335" cy="230" r="10" fill="white"/>
+</g>
+</g>
+<rect id="spine" x="345" y="271" width="11" height="115" fill="#C4C4C4"/>
+<g id="hands">
+<rect id="Rectangle 6" x="345.477" y="281" width="7.00003" height="77.0419" transform="rotate(45 345.477 281)" fill="#C4C4C4"/>
+<rect id="Rectangle 7" x="346" y="280.95" width="7.00003" height="77.0419" transform="rotate(-45 346 280.95)" fill="#C4C4C4"/>
+</g>
+<g id="legs">
+<rect id="Rectangle 8" x="345.477" y="381" width="7.00003" height="77.0419" transform="rotate(45 345.477 381)" fill="#C4C4C4"/>
+<rect id="Rectangle 9" x="350" y="385.95" width="7.00003" height="77.0419" transform="rotate(-45 350 385.95)" fill="#C4C4C4"/>
+</g>
+</g>
+</g>
+</svg>
