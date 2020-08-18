@@ -3,14 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hangman | REST API</title>
+    <title>Hangman Game</title>
     <link rel="stylesheet" href="./styles.css" />
     <link rel="shortcut icon" href="favicon.svg" type="image/svg" />
     <meta name="author" content="Shravan Kumar Karnati" />
-    <meta
-      name="Description"
-      content="A Full Stack Hangman Game With REST API"
-    />
+    <meta name="Description" content="A Simple Hangman Game" />
   </head>
   <body>
     <div class="container">
@@ -148,7 +145,7 @@
                   />
                   <g id="hands">
                     <rect
-                      id="Rectangle 6"
+                      id="hands_left"
                       x="345.477"
                       y="281"
                       width="7.00003"
@@ -157,7 +154,7 @@
                       fill="#C4C4C4"
                     />
                     <rect
-                      id="Rectangle 7"
+                      id="hands_right"
                       x="346"
                       y="280.95"
                       width="7.00003"
@@ -168,7 +165,7 @@
                   </g>
                   <g id="legs">
                     <rect
-                      id="Rectangle 8"
+                      id="legs_left"
                       x="345.477"
                       y="381"
                       width="7.00003"
@@ -177,7 +174,7 @@
                       fill="#C4C4C4"
                     />
                     <rect
-                      id="Rectangle 9"
+                      id="legs_right"
                       x="350"
                       y="385.95"
                       width="7.00003"
@@ -187,6 +184,22 @@
                     />
                   </g>
                 </g>
+                <rect
+                  id="floor_right"
+                  x="418"
+                  y="508"
+                  width="165"
+                  height="10"
+                  fill="#C4C4C4"
+                />
+                <rect
+                  id="floor_left"
+                  x="117"
+                  y="508"
+                  width="165"
+                  height="10"
+                  fill="#C4C4C4"
+                />
               </g>
             </svg>
           </div>
@@ -209,15 +222,10 @@
           <button class="main-game--start">Start New game</button>
         </div>
       </main>
-      <footer class="footer">
-        <div class="footer-options">
-          <a href="#">API </a>
-          <p>by Shravan &copy; 2020</p>
-        </div>
-      </footer>
+      <!-- <footer class="footer">
+        <div class="footer-options"></div>
+      </footer> -->
     </div>
   </body>
   <script src="./app.js"></script>
 </html>
-
-<!-- name="letter" -->

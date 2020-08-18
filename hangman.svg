@@ -35,5 +35,7 @@
 <rect id="Rectangle 9" x="350" y="385.95" width="7.00003" height="77.0419" transform="rotate(-45 350 385.95)" fill="#C4C4C4"/>
 </g>
 </g>
+<rect id="floor_right" x="418" y="508" width="165" height="10" fill="#C4C4C4"/>
+<rect id="floor_left" x="117" y="508" width="165" height="10" fill="#C4C4C4"/>
 </g>
 </svg>

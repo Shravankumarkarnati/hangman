@@ -22,6 +22,10 @@ class Hangman {
         svgFloorFull: document.querySelector("#floor_full"),
         svgFloorLeft: document.querySelector("#floor_left"),
         svgFloorRight: document.querySelector("#floor_right"),
+        svgHandsLeft: document.querySelector("#hands_left"),
+        svgHandsRight: document.querySelector("#hands_right"),
+        svgLegsLeft: document.querySelector("#legs_left"),
+        svgLegsRight: document.querySelector("#legs_right"),
       },
     };
     this.word = null;
@@ -57,7 +61,6 @@ class Hangman {
     } else if (action === 4) {
       this.docRef.svg.svgLegs.style.visibility = "visible";
     } else if (action === 5) {
-      console.log("hang called", action);
       this.gameEnd();
     }
   }
@@ -94,7 +97,6 @@ class Hangman {
   formSubmit() {
     const letterGuess = this.docRef.guessInput.value.toString();
     this.docRef.guessInput.value = "";
-    if (letterGuess) console.log(letterGuess, this.word);
     if (this.word && letterGuess) {
       if (
         this.word.includes(letterGuess) &&
@@ -113,6 +115,18 @@ class Hangman {
   }
 
   async startGame() {
+    this.docRef.svg.svgRope.setAttribute("height", "81px");
+    this.docRef.svg.svgFloorFull.style.visibility = "visible";
+    this.docRef.svg.svgFloorLeft.style.visibility = "hidden";
+    this.docRef.svg.svgFloorRight.style.visibility = "hidden";
+    this.docRef.svg.svgMan.style.transform = "translateY(0px)";
+    this.docRef.svg.svgHandsLeft.classList.remove("dead");
+    this.docRef.svg.svgLegsLeft.classList.remove("dead");
+    this.docRef.svg.svgHandsRight.classList.remove("dead");
+    this.docRef.svg.svgLegsRight.classList.remove("dead");
+    this.docRef.svg.svgEyesCircle.classList.add("show");
+    this.docRef.svg.svgEyesCross.classList.remove("show");
+
     this.docRef.wordDiv.style.visibility = "visible";
     this.docRef.meaningDiv.style.display = "inline-block";
     this.docRef.guessForm.style.display = "inline-block";
@@ -133,10 +147,27 @@ class Hangman {
     this.docRef.meaningDiv.insertAdjacentHTML("afterbegin", meaninghtml);
   }
 
+  animate() {
+    this.docRef.svg.svgRope.setAttribute("height", "320px");
+    this.docRef.svg.svgFloorFull.style.visibility = "hidden";
+    this.docRef.svg.svgFloorLeft.style.visibility = "visible";
+    this.docRef.svg.svgFloorRight.style.visibility = "visible";
+    this.docRef.svg.svgMan.style.transform = "translateY(200px)";
+    this.docRef.svg.svgHandsLeft.classList.add("dead");
+    this.docRef.svg.svgLegsLeft.classList.add("dead");
+    this.docRef.svg.svgHandsRight.classList.add("dead");
+    this.docRef.svg.svgLegsRight.classList.add("dead");
+    this.docRef.svg.svgEyesCircle.classList.remove("show");
+    this.docRef.svg.svgEyesCross.classList.add("show");
+  }
+
   gameEnd() {
     this.animate();
     this.docRef.guessForm.style.display = "none";
     this.docRef.wrongDiv.style.display = "none";
+    let set = new Set([...this.word]);
+    this.corrects = [...set];
+    this.setHtml();
   }
 
   controller() {

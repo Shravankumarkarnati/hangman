@@ -11,25 +11,51 @@ $colorPrimary:#195962;
     font-family: inherit;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+@mixin mediaQuery($width, $property, $value) {
+    @media only screen and (max-width:$width) {
+        #{$property}: $value;
+    }
+}
+
 html {
     font-size: 62.5%;
     font-family: 'Rubik', sans-serif;
+
+    @include mediaQuery(4000px, font-size, 110%);
+    @include mediaQuery(1800px, font-size, 70%);
+    @include mediaQuery(1024px, font-size, 60%);
+    @include mediaQuery(768px, font-size, 50%);
+    @include mediaQuery(426px, font-size, 35%);
+    @include mediaQuery(375px, font-size, 30%);
+    @include mediaQuery(350px, font-size, 25%);
+    @include mediaQuery(300px, font-size, 20%);
+
 }
 
 .container {
     width: 100vw;
     height: 100vh;
 
-    display: flex;
-    flex-direction: column;
+    @extend .flex-column;
     align-items: flex-start;
     justify-content: flex-start;
 }
 
 .header {
     width: 100%;
-    display: flex;
-    align-items: center;
+    @extend .flex-row;
     justify-content: flex-start;
     background: $colorBlack;
 
@@ -48,8 +74,7 @@ html {
     background: $colorBlack;
 
     &-options {
-        display: flex;
-        align-items: center;
+        @extend .flex-row;
         justify-content: space-between;
         color: $colorWhite;
 
@@ -70,18 +95,18 @@ html {
     width: 100%;
     background-color: $colorBlack;
 
-    display: flex;
-    align-items: center;
+    @extend .flex-row;
+    flex-direction: r;
     justify-content: center;
+
+    @include mediaQuery(426px, flex-direction, column-reverse);
 
     &-hangman,
     &-game {
         width: 50%;
         height: 100%;
-        display: flex;
-        align-items: center;
+        @extend .flex-column;
         justify-content: flex-start;
-        flex-direction: column;
     }
 
     &-hangman {
@@ -89,8 +114,7 @@ html {
         &--svg {
             width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
+            @extend .flex-row;
             justify-content: center;
         }
 
@@ -133,8 +157,36 @@ html {
             #floor_full,
             #bar_left,
             #bar_top,
-            #rope {
+            #rope,
+            #floor_right,
+            #floor_left {
                 visibility: visible;
+            }
+
+            & #hands_left,
+            & #legs_left {
+
+                &.dead {
+                    transform: rotate(25deg);
+                    transform-origin: 50% 41%;
+                }
+            }
+
+            & #legs_left.dead {
+                transform-origin: 50% 54%;
+            }
+
+            & #hands_right,
+            & #legs_right {
+
+                &.dead {
+                    transform: rotate(-25deg);
+                    transform-origin: 50% 41%;
+                }
+            }
+
+            & #legs_right.dead {
+                transform-origin: 50% 55%;
             }
 
         }
@@ -152,8 +204,7 @@ html {
             border-radius: .5rem;
             background: $colorWhite;
 
-            display: flex;
-            align-items: center;
+            @extend .flex-row;
             justify-content: space-between;
 
             & .letter {
@@ -186,16 +237,12 @@ html {
 
         &--meaning {
             width: 100%;
-            height: 3rem;
-            height: 5rem;
             padding: 0 .3rem;
             border-radius: .5rem;
-            background: $colorPrimary;
             margin-bottom: 5vh;
             color: $colorWhite;
             font-size: 1.5rem;
-            display: flex;
-            align-items: center;
+            @extend .flex-row;
             justify-content: center;
 
         }
@@ -204,8 +251,7 @@ html {
             margin-bottom: 7vh;
 
             form {
-                display: flex;
-                align-items: center;
+                @extend .flex-row;
 
                 & * {
                     padding: 1rem;
@@ -248,8 +294,7 @@ html {
             padding: 1rem;
             border-radius: .5rem;
 
-            display: flex;
-            align-items: center;
+            @extend .flex-row;
             justify-content: flex-start;
 
             & span {

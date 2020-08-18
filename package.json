@@ -1,12 +1,17 @@
 {
   "name": "hangman",
   "version": "1.0.0",
-  "description": "A full stack hangman game- restAPI(backend)",
-  "main": "index.js",
+  "description": "A simple hangman game",
+  "main": "app.js",
   "scripts": {
     "scss:watch": "node-sass ./styles.scss ./styles.css -w",
     "live": "live-server",
-    "start": "npm-run-all --parallel live scss:watch"
+    "start": "npm-run-all --parallel live scss:watch",
+    "compile:scss": "node-sass ./styles.scss ./styles.comp.css",
+    "concat:css": "concat -o ./styles.concat.css ./styles.comp.css ",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" ./styles.concat.css -o ./styles.prefix.css",
+    "compress:css": "node-sass ./styles.prefix.css ./styles.css --output-style compressed",
+    "build:css": "npm-run-all compile:scss  concat:css prefix:css compress:css"
   },
   "repository": {
     "type": "git",
@@ -19,9 +24,13 @@
   },
   "homepage": "https://github.com/Shravankumarkarnati/hangman#readme",
   "dependencies": {
+    "autoprefixer": "^9.8.6",
     "axios": "^0.19.2",
+    "concat": "^1.0.3",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
+    "postcss": "^7.0.32",
+    "postcss-cli": "^7.1.1",
     "velocity-animate": "^1.5.2"
   },
   "devDependencies": {
