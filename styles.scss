@@ -100,6 +100,14 @@ html {
 
             & * {
                 fill: $colorWhite;
+            }
+
+            & #head,
+            #eyes_cross,
+            #hands,
+            #legs,
+            #spine,
+            #eyes_circle {
                 visibility: hidden;
             }
 
@@ -107,14 +115,25 @@ html {
                 fill: $colorBlack;
             }
 
-            & #eyes circle {
-                fill: $colorBlack;
+            & #eyes_circle,
+            & #eyes_cross {
+
+                & * {
+                    visibility: hidden;
+                }
+
+                &.show * {
+                    visibility: visible;
+                    fill: $colorBlack;
+                }
             }
 
-            & #backgrounnd_rect,
+
+            & #background_rect,
             #floor_full,
             #bar_left,
-            #bar_top {
+            #bar_top,
+            #rope {
                 visibility: visible;
             }
 
@@ -125,18 +144,60 @@ html {
         padding: 1rem 4rem;
 
         &--word {
-            margin-top: 20vh;
+            margin-top: 15vh;
             margin-bottom: 5vh;
             width: 100%;
-            height: 5rem;
+            height: 7rem;
+            padding: 2rem 1rem;
+            border-radius: .5rem;
             background: $colorWhite;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & .letter {
+                flex: 1 1 0;
+                margin: 0 .2rem;
+                font-size: 3rem;
+                color: $colorBlack;
+                text-align: center;
+                font-weight: 600;
+                text-transform: uppercase;
+                position: relative;
+                visibility: hidden;
+
+                &.show {
+                    visibility: visible;
+                }
+
+                &.hidden::after {
+                    content: "";
+                    visibility: visible;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: .3rem;
+                    background-color: $colorBlack;
+                }
+            }
         }
 
         &--meaning {
             width: 100%;
             height: 3rem;
+            height: 5rem;
+            padding: 0 .3rem;
+            border-radius: .5rem;
             background: $colorPrimary;
             margin-bottom: 5vh;
+            color: $colorWhite;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
         }
 
         &--enter {
@@ -181,9 +242,21 @@ html {
 
         &--tries {
             width: 100%;
-            height: 3rem;
+            height: 5vh;
             background: $colorPrimary;
             margin-bottom: 5vh;
+            padding: 1rem;
+            border-radius: .5rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            & span {
+                color: $colorWhite;
+                font-size: 2.4rem;
+                text-transform: uppercase;
+            }
         }
 
         &--start {

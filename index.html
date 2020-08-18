@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hangman | REST API</title>
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg" />
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg" />
     <meta name="author" content="Shravan Kumar Karnati" />
     <meta
       name="Description"
@@ -29,7 +29,7 @@
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g id="Hangman1">
+              <g id="hangman">
                 <rect
                   width="700"
                   height="700"
@@ -78,20 +78,64 @@
                       fill="#C4C4C4"
                     />
                     <g id="eyes">
-                      <circle
-                        id="Ellipse 2"
-                        cx="366"
-                        cy="230"
-                        r="10"
-                        fill="white"
-                      />
-                      <circle
-                        id="Ellipse 3"
-                        cx="335"
-                        cy="230"
-                        r="10"
-                        fill="white"
-                      />
+                      <g id="eyes_circle">
+                        <circle
+                          id="Ellipse 2"
+                          cx="366"
+                          cy="230"
+                          r="10"
+                          fill="white"
+                        />
+                        <circle
+                          id="Ellipse 3"
+                          cx="335"
+                          cy="230"
+                          r="10"
+                          fill="white"
+                        />
+                      </g>
+                      <g id="eyes_cross">
+                        <g id="Group 1">
+                          <rect
+                            id="Rectangle 10"
+                            x="325.536"
+                            y="233.678"
+                            width="20"
+                            height="10"
+                            transform="rotate(-45 325.536 233.678)"
+                            fill="white"
+                          />
+                          <rect
+                            id="Rectangle 11"
+                            x="339.678"
+                            y="240.749"
+                            width="20"
+                            height="10"
+                            transform="rotate(-135 339.678 240.749)"
+                            fill="white"
+                          />
+                        </g>
+                        <g id="Group 2">
+                          <rect
+                            id="Rectangle 10_2"
+                            x="355.536"
+                            y="233.678"
+                            width="20"
+                            height="10"
+                            transform="rotate(-45 355.536 233.678)"
+                            fill="white"
+                          />
+                          <rect
+                            id="Rectangle 11_2"
+                            x="369.678"
+                            y="240.749"
+                            width="20"
+                            height="10"
+                            transform="rotate(-135 369.678 240.749)"
+                            fill="white"
+                          />
+                        </g>
+                      </g>
                     </g>
                   </g>
                   <rect
@@ -151,9 +195,14 @@
           <div class="main-game--word"></div>
           <div class="main-game--meaning"></div>
           <div class="main-game--enter">
-            <form>
-              <input type="text" name="letter" size="1" maxlength="1" />
-              <button type="submit">Guess</button>
+            <form class="main-game--form">
+              <input
+                class="main-game--form-input"
+                type="text"
+                size="1"
+                maxlength="1"
+              />
+              <button class="main-game--form-btn" type="submit">Guess</button>
             </form>
           </div>
           <div class="main-game--tries"></div>
@@ -170,3 +219,5 @@
   </body>
   <script src="./app.js"></script>
 </html>
+
+<!-- name="letter" -->

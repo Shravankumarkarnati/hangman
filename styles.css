@@ -68,30 +68,76 @@ html {
     width: 80%;
     height: 80%; }
     .main-hangman svg * {
-      fill: #FFFFFF;
+      fill: #FFFFFF; }
+    .main-hangman svg #head,
+    .main-hangman svg #eyes_cross,
+    .main-hangman svg #hands,
+    .main-hangman svg #legs,
+    .main-hangman svg #spine,
+    .main-hangman svg #eyes_circle {
       visibility: hidden; }
     .main-hangman svg #background_rect {
       fill: #191C21; }
-    .main-hangman svg #eyes circle {
+    .main-hangman svg #eyes_circle *,
+    .main-hangman svg #eyes_cross * {
+      visibility: hidden; }
+    .main-hangman svg #eyes_circle.show *,
+    .main-hangman svg #eyes_cross.show * {
+      visibility: visible;
       fill: #191C21; }
-    .main-hangman svg #backgrounnd_rect,
+    .main-hangman svg #background_rect,
     .main-hangman svg #floor_full,
     .main-hangman svg #bar_left,
-    .main-hangman svg #bar_top {
+    .main-hangman svg #bar_top,
+    .main-hangman svg #rope {
       visibility: visible; }
   .main-game {
     padding: 1rem 4rem; }
     .main-game--word {
-      margin-top: 20vh;
+      margin-top: 15vh;
       margin-bottom: 5vh;
       width: 100%;
-      height: 5rem;
-      background: #FFFFFF; }
+      height: 7rem;
+      padding: 2rem 1rem;
+      border-radius: .5rem;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .main-game--word .letter {
+        flex: 1 1 0;
+        margin: 0 .2rem;
+        font-size: 3rem;
+        color: #191C21;
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        position: relative;
+        visibility: hidden; }
+        .main-game--word .letter.show {
+          visibility: visible; }
+        .main-game--word .letter.hidden::after {
+          content: "";
+          visibility: visible;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: .3rem;
+          background-color: #191C21; }
     .main-game--meaning {
       width: 100%;
       height: 3rem;
+      height: 5rem;
+      padding: 0 .3rem;
+      border-radius: .5rem;
       background: #195962;
-      margin-bottom: 5vh; }
+      margin-bottom: 5vh;
+      color: #FFFFFF;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
     .main-game--enter {
       margin-bottom: 7vh; }
       .main-game--enter form {
@@ -117,9 +163,18 @@ html {
             opacity: .7; }
     .main-game--tries {
       width: 100%;
-      height: 3rem;
+      height: 5vh;
       background: #195962;
-      margin-bottom: 5vh; }
+      margin-bottom: 5vh;
+      padding: 1rem;
+      border-radius: .5rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; }
+      .main-game--tries span {
+        color: #FFFFFF;
+        font-size: 2.4rem;
+        text-transform: uppercase; }
     .main-game--start {
       font-size: 3rem;
       border-radius: .5rem;
